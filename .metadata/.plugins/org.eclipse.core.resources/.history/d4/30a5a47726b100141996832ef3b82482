@@ -1,0 +1,28 @@
+package com.biplav.aiplanning.problems.monkcanibbal;
+
+import java.util.List;
+
+import com.biplav.aiplanning.definitions.IProblem;
+import com.biplav.aiplanning.definitions.IState;
+
+public class MissionaryCannibalProblem implements IProblem {
+
+	@Override
+	public IState getInitialState() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Boolean goalTest(IState state) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<IState> expand(IState state) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

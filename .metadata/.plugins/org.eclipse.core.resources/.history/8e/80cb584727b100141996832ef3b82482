@@ -1,0 +1,10 @@
+package com.biplav.aiplanning.definitions;
+
+import java.util.List;
+
+public interface IProblem {
+
+	public IState getInitialState();
+	public Boolean goalTest(IState state);
+	public Collection<IState> expand(IState state);
+}

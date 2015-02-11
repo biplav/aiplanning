@@ -1,0 +1,51 @@
+package com.biplav.aiplanning.definitions;
+
+import java.util.Collection;
+import java.util.Deque;
+import java.util.HashSet;
+import java.util.LinkedList;
+
+public class TreeSearch implements ISearch {
+	
+	Collection<Node> fringe;
+
+	@Override
+	public Collection<Node> search(IProblem problem, IStrategy strategy) {
+		fringe = strategy.getFringe();
+		fringe.add(new Node(null, problem.getInitialState(), null, 0));
+		while(true) {
+			if(fringe.isEmpty()) return null;
+			Node node = selectFrom(strategy);
+			if(problem.goalTest(node.getState())) {
+				return pathTo(node);
+			}
+			fringe.addAll(expand(problem,node));
+		}
+	}
+
+
+	@Override
+	public Collection<Node> expand(IProblem problem, Node node) {
+		Collection<IState> newStates = problem.expand(node.getState());
+		Collection<Node> newNodes = new HashSet<Node>(); 
+		for(IState state : newStates) {
+			Node newNode = new Node(node,state,null,node.getDepth()+1);
+			newNodes.add(newNode);
+		}
+		return newNodes;
+	}
+
+
+	@Override
+	public Node selectFrom(IStrategy strategy) {
+		return strategy.selectNode(fringe);
+	}
+
+	@Override
+	public Collection<Node> pathTo(Node node) {
+		Deque<Node> path = new LinkedList<Node>();
+		
+		
+	}
+
+}

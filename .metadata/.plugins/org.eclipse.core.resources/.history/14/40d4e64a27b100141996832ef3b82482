@@ -1,0 +1,28 @@
+package com.biplav.aiplanning.problems.monkcanibbal;
+
+import java.util.List;
+
+import com.biplav.aiplanning.definitions.IProblem;
+import com.biplav.aiplanning.definitions.IState;
+
+public class MissionaryCannibalProblem implements IProblem {
+
+	@Override
+	public IState getInitialState() {
+		return null;
+	}
+
+	@Override
+	public Boolean goalTest(IState state) {
+		State mcState = (State) state;
+		if(mcState.cannibals_right == 3 && mcState.missionaries_right == 3)
+			return true;
+		return false;
+	}
+
+	@Override
+	public List<IState> expand(IState state) {
+		return ((State)state).successor();
+	}
+
+}

@@ -1,0 +1,7 @@
+package com.biplav.aiplanning.definitions;
+
+public interface ISearch {
+	
+	
+
+}

@@ -1,0 +1,31 @@
+package com.biplav.aiplanning.definitions;
+
+import java.util.ArrayList;
+import java.util.Collection;
+
+public class TreeSearch implements ISearch {
+	
+	Collection<Node> fringe;
+
+	@Override
+	public void search(IProblem problem, IStrategy strategy) {
+		fringe = new ArrayList<Node>();
+		fringe.add(new Node(null, problem.getInitialState(), null, 0));
+		while(true) {
+			if(fringe.isEmpty()) return null;
+		}
+	}
+
+	@Override
+	public Node selectFrom(IStrategy strategy) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Collection<Node> expand(IProblem problem, Node node) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

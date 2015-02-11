@@ -1,0 +1,14 @@
+package com.biplav.aiplanning.problems.monkcanibbal;
+
+import java.util.Collection;
+
+import com.biplav.aiplanning.definitions.IState;
+
+public class State implements IState {
+
+	@Override
+	public Collection<IState> successor() {
+		return null;
+	}
+
+}

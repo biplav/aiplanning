@@ -1,0 +1,9 @@
+package com.biplav.aiplanning.definitions;
+
+import java.util.Vector;
+
+public interface IStrategy {
+	
+	public Collection<Node> getFringe();
+	public Node selectNode(Collection<Node> fringe);
+}

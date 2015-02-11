@@ -1,0 +1,12 @@
+package com.biplav.aiplanning.problems.monkcanibbal;
+
+import com.biplav.aiplanning.definitions.TreeSearch;
+
+public class MissionaryCannibalPlan {
+
+	public static void main(String[] args) {
+		TreeSearch ts = new TreeSearch();
+		ts.search(new MissionaryCannibalProblem(), new MissionaryCannibalStrategyBFS());
+		
+	}
+}

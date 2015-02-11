@@ -1,0 +1,24 @@
+package com.biplav.aiplanning.problems.monkcanibbal;
+
+import java.util.Collection;
+
+import com.biplav.aiplanning.definitions.IState;
+
+public class State implements IState {
+	
+	public int missionaries_left;
+	public int canibals_left;
+	
+	public int missionaries_right;
+	public int cannibals_right;
+	
+	public int boat;
+	
+	
+
+	@Override
+	public Collection<IState> successor() {
+		return null;
+	}
+
+}

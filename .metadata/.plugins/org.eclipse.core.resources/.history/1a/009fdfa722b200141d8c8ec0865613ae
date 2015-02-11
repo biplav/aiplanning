@@ -1,0 +1,32 @@
+package com.biplav.aiplanning.problems.monkcanibbal;
+
+import java.util.Collection;
+import java.util.Date;
+import java.util.Deque;
+
+import com.biplav.aiplanning.definitions.Node;
+import com.biplav.aiplanning.definitions.TreeSearch;
+
+public class MissionaryCannibalPlan {
+
+	public static void main(String[] args) {
+		TreeSearch ts = new TreeSearch();
+		MissionaryCannibalStrategyBFS strategy = new MissionaryCannibalStrategyBFS();
+		MissionaryCannibalProblem problem = new MissionaryCannibalProblem();
+		long now = (new Date()).getTime();
+		Collection<Node> solution = ts.search(problem, strategy);
+		printSolution(solution);
+		System.out.println("Time consumed is " + ((new Date()).getTime() - now));
+	}
+
+	private static void printSolution(Collection<Node> solution) {
+		if(solution == null) {
+			System.out.println("Failed to plan!");
+		} else {
+			while(!solution.isEmpty()) {
+				Node node = ((Deque<Node>)solution).pop();
+				System.out.println(node.getDepth() + ":"+node.getState());
+			}
+		}
+	}
+}

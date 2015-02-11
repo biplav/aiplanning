@@ -1,0 +1,5 @@
+package com.biplav.aiplanning.definitions;
+
+public class TreeSearch implements ISearch {
+
+}

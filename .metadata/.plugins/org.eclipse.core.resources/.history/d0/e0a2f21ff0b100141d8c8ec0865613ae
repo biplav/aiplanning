@@ -1,0 +1,8 @@
+package com.biplav.aiplanning.problems.monkcanibbal;
+
+public class MissionaryCannibalPlan {
+
+	public static void main(String[] args) {
+		
+	}
+}

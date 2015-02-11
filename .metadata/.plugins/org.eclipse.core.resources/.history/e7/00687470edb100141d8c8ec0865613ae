@@ -1,0 +1,7 @@
+package com.biplav.aiplanning.definitions;
+
+public interface IStrategy {
+	
+	public Vector<Node> getFringe();
+	
+}

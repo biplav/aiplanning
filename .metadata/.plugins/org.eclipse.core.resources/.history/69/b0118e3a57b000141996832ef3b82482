@@ -1,0 +1,9 @@
+package com.biplav.aiplanning.definitions;
+
+public interface IStrategy {
+	
+	public IState getInitialState();
+	public Boolean goalTest(IState state);
+	
+
+}

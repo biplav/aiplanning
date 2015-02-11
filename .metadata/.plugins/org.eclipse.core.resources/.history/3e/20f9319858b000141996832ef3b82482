@@ -1,0 +1,13 @@
+package com.biplav.aiplanning.definitions;
+
+import java.util.Collection;
+import java.util.Vector;
+
+public interface ISearch {
+
+	public Vector<Node> search(IProblem problem, IStrategy strategy);
+	public Node selectFrom(Collection<Node> fringe,IStrategy strategy);
+	public Collection<Node> expand(IProblem problem, Node node);
+	public Vector<Node> pathTo(Node node);
+	
+}

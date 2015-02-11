@@ -1,0 +1,21 @@
+package com.biplav.aiplanning.problems.monkcanibbal;
+
+import java.util.Vector;
+
+import com.biplav.aiplanning.definitions.IStrategy;
+import com.biplav.aiplanning.definitions.Node;
+
+public class MissionaryCannibalStrategyBFS implements IStrategy {
+
+	@Override
+	public Vector<Node> getFringe() {
+		return new Queue<Node>();
+	}
+
+	@Override
+	public Node selectNode(Vector<Node> fringe) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

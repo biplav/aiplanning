@@ -1,0 +1,32 @@
+package com.biplav.aiplanning.problems.monkcanibbal;
+
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Set;
+
+import com.biplav.aiplanning.definitions.IState;
+import com.biplav.aiplanning.definitions.IStrategy;
+import com.biplav.aiplanning.definitions.Node;
+
+public class MissionaryCannibalStrategyBFS implements IStrategy {
+	
+	Set<IState> visitedStates = new HashSet<IState>();
+
+	@Override
+	public Collection<Node> getFringe() {
+		return new LinkedList<Node>();
+	}
+
+	@Override
+	public Node selectNode(Collection<Node> fringe) {
+		Node node = ((Queue<Node>)fringe).poll();
+		while(visitedStates.contains(node.getState()) && !fringe.isEmpty()) {
+			node = ((Queue<Node>)fringe).poll();
+		}
+		visitedStates.add(node.getState());
+		return node;
+	}
+
+}

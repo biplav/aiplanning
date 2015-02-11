@@ -1,0 +1,45 @@
+package com.biplav.aiplanning.problems.monkcanibbal;
+
+import java.util.Collection;
+
+import com.biplav.aiplanning.definitions.IState;
+
+public class State implements IState {
+	
+	public int missionaries_left;
+	public int canibals_left;
+	
+	public int missionaries_right;
+	public int cannibals_right;
+	
+	public boolean boat; //initial position
+	
+	public State(int missionaries_left, int canibals_left,
+			int missionaries_right, int cannibals_right, boolean boat) {
+		super();
+		this.missionaries_left = missionaries_left;
+		this.canibals_left = canibals_left;
+		this.missionaries_right = missionaries_right;
+		this.cannibals_right = cannibals_right;
+		this.boat = boat;
+	}
+
+
+	@Override
+	public Collection<IState> successor() {
+		if(boat == true) { //On the left side
+			return successorLeft();
+		} else {
+			return successorRigth;
+		}
+	}
+	
+	private Collection<IState> successorLeft() {
+		return null;
+	}
+	
+	private Collection<IState> successorRight() {
+		return null;
+	}
+
+}

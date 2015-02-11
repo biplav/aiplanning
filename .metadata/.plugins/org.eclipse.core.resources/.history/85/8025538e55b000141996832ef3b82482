@@ -1,0 +1,12 @@
+package com.biplav.aiplanning.definitions;
+
+public class Node {
+	
+	private Node parent;
+	private IState state;
+	private IAction action;
+	private int depth;
+	
+	
+
+}

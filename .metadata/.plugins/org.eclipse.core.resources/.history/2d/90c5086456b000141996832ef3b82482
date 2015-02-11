@@ -1,0 +1,8 @@
+package com.biplav.aiplanning.definitions;
+
+public interface ISearch {
+	
+	public void search(IProblem problem, IStrategy strategy);
+	
+
+}

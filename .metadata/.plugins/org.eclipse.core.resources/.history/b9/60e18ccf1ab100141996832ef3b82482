@@ -1,0 +1,59 @@
+package com.biplav.aiplanning.problems.monkcanibbal;
+
+import java.util.Collection;
+import java.util.HashSet;
+
+import com.biplav.aiplanning.definitions.IState;
+
+public class State implements IState {
+	
+	public int missionaries_left;
+	public int cannibals_left;
+	
+	public int missionaries_right;
+	public int cannibals_right;
+	
+	public boolean boat; //initial position
+	
+	public State(int missionaries_left, int canibals_left,
+			int missionaries_right, int cannibals_right, boolean boat) {
+		super();
+		this.missionaries_left = missionaries_left;
+		this.cannibals_left = canibals_left;
+		this.missionaries_right = missionaries_right;
+		this.cannibals_right = cannibals_right;
+		this.boat = boat;
+	}
+	
+	public boolean isValid() {
+		if (cannibals_right > missionaries_right
+				|| cannibals_left > missionaries_right)
+			return false;
+		return true;
+	}
+
+
+	@Override
+	public Collection<IState> successor() {
+		if(boat == true) { //On the left side
+			return successorLeft();
+		} else {
+			return successorRight();
+		}
+	}
+	
+	private Collection<IState> successorLeft() {
+		Collection<IState> newStates = new HashSet<IState>();
+		//3 things are possible.
+		//2m
+		if(missionaries_left > 2) 
+		//2c
+		//1m1c
+		return newStates;
+	}
+	
+	private Collection<IState> successorRight() {
+		return null;
+	}
+
+}
